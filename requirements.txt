@@ -1,0 +1,30 @@
+# File: requirements.txt
+
+# --- Core Application & Web Framework ---
+dash
+dash-svg
+
+# --- Data Science & Modeling ---
+pandas
+numpy
+scikit-learn
+lightgbm
+
+
+# --- API & Web Requests ---
+requests
+
+# --- Configuration & Environment ---
+PyYAML
+python-dotenv
+
+# --- Testing Framework ---
+pytest
+pytest-mock
+
+# --- Development & Data Analysis ---
+matplotlib
+seaborn
+notebook
+jupyterlab
+psutil

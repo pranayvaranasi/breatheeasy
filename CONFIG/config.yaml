@@ -1,0 +1,73 @@
+# filepath: /workspaces/aetheriq/CONFIG/config.yaml
+# File: config/config.yaml
+
+# --- File and Directory Paths ---
+# Relative to the project root directory.
+paths:
+  # The primary dataset used for training the daily models.
+  data_file: data/Master_AQI_Dataset.csv
+  models_dir: models/
+
+# --- API Configuration ---
+# Base URLs for external data services.
+apis:
+  aqicn:
+    base_url: "https://api.waqi.info/feed"
+  weatherapi:
+    base_url: "http://api.weatherapi.com/v1/current.json"
+    forecast_url: "http://api.weatherapi.com/v1/forecast.json"
+
+# --- Modeling Configuration ---
+modeling:
+  # List of cities for which models will be trained and predictions generated.
+  target_cities:
+    - Bangalore
+    - Chennai
+    - Hyderabad
+    - Mumbai
+
+  # Number of days to forecast ahead for the user interface.
+  forecast_days: 3
+  
+  # Weather regressors to use in the Prophet model (available in Master_AQI_Dataset.csv)
+  # Selected based on correlation with AQI and atmospheric science principles
+  weather_regressors: 
+    - temperature_2m
+    - relative_humidity_2m
+    - precipitation
+    - pressure_msl
+    - cloud_cover
+    - wind_speed_10m
+    - dew_point_2m
+  
+  # The maximum value for the initial live residual in the "Anchor and Trend" logic.
+  # This prevents a single, massive error on day 0 from skewing the entire forecast.
+  # A value of 75 means if the live AQI is 200 and the model predicts 100 (a 100-point error),
+  # the system will cap the error at 75 when starting its forecast.
+  max_residual_cap: 75
+
+# --- API Retry and Timeout Settings ---
+# These settings make the application more resilient to network failures.
+api_timeout_seconds: 15
+api_retries:
+  default: 2
+  weather_api_current: 2
+  weather_api_forecast: 3
+api_retry_delay_seconds:
+  default: 1
+  weather_api_current: 1
+  weather_api_forecast: 2
+
+
+# --- Logging Configuration ---
+logging:
+  # Overall level for handlers. Can be DEBUG, INFO, WARNING, ERROR, CRITICAL.
+  level: INFO
+  # Format for log messages. See Python's logging documentation for options.
+  format: '%(asctime)s - [%(levelname)s] - %(name)s - %(filename)s:%(lineno)d - %(message)s'
+  # Set to true to enable logging to a rotating file.
+  log_to_file: true
+  log_filename: app.log
+  # Specific log levels for console and file handlers.
+  log_file_level: DEBUG
+  log_console_level: INFO

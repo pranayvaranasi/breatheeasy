@@ -1,0 +1,868 @@
+
+/* BreatheEasy/assets/style.css */
+
+
+:root {
+  --primary-bg: linear-gradient(135deg, #E6F7FF 0%, #D0F0FF 100%);
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --control-bar-bg: rgba(255, 255, 255, 0.6);
+  --text-primary: #0A4D68;
+  --text-secondary: #088395;
+  --accent-primary: #0077B6;
+  --accent-secondary: #05BFDB;
+  --border-color: rgba(255, 255, 255, 0.4);
+  --shadow-color: rgba(0, 70, 110, 0.12);
+  --graph-bg: rgba(255, 255, 255, 0.8);
+  --good-color: #228B22;
+  --satisfactory-color: #90EE90;
+  --moderate-color: #FFD700;
+  --poor-color: #FFA500;
+  --very-poor-color: #FF0000;
+  --severe-color: #800000;
+  --accent-primary-transparent: rgba(88, 166, 255, 0.2);
+  --control-bg-transparent: rgba(255, 255, 255, 0.3);
+  --accent-border-transparent: rgba(88, 166, 255, 0.4);
+  --menu-bg: rgba(230, 247, 255, 0.98);
+  --menu-focus-bg: rgba(0, 169, 255, 0.3);
+  --placeholder-bg: rgba(0, 0, 0, 0.05);
+  --separator-color: rgba(10, 77, 104, 0.2);
+  --card-shadow-light: rgba(0, 0, 0, 0.05);
+  --scrollbar-track-bg: rgba(230, 247, 255, 0.5);
+  --scrollbar-thumb-bg: rgba(0, 169, 255, 0.6);
+  --scrollbar-thumb-hover-bg: rgba(0, 169, 255, 0.8);
+  --scrollbar-thumb-border: rgba(255, 255, 255, 0.3);
+  --gauge-track-color: #E9ECEF;
+  --error-text-color: #D32F2F;
+  --card-shadow-light-hover: rgba(0, 0, 0, 0.08);
+  --separator-color-light: rgba(10, 77, 104, 0.1);
+  --warning-text-color: #E74C3C;
+  --collapsible-bg: rgba(248, 251, 255, 0.7);
+  --collapsible-text-color: #005A8C;
+  --collapsible-hover-bg: rgba(220, 235, 250, 0.6);
+  --pill-bg: #E6F7FF;
+  --pill-border: #B0E0FF;
+  --card-shadow-medium: rgba(0, 0, 0, 0.07);
+}
+
+.dark-theme {
+  --primary-bg: linear-gradient(135deg, #1A2E44 0%, #2A3B4F 100%);
+  --card-bg: rgba(27, 40, 56, 0.75);
+  --control-bar-bg: rgba(27, 40, 56, 0.6);
+  --text-primary: #E0E1E2;
+  --text-secondary: #B0B3B8;
+  --accent-primary: #58A6FF;
+  --accent-secondary: #30C8D6;
+  --border-color: rgba(88, 166, 255, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --graph-bg: rgba(30, 41, 51, 0.8);
+  --good-color: #4CAF50;
+  --satisfactory-color: #8BC34A;
+  --moderate-color: #FFEB3B;
+  --poor-color: #FF9800;
+  --very-poor-color: #F44336;
+  --severe-color: #B71C1C;
+  --accent-primary-transparent: rgba(88, 166, 255, 0.2);
+  --control-bg-transparent: rgba(40, 58, 77, 0.3); 
+  --accent-border-transparent: rgba(88, 166, 255, 0.4);
+  --menu-bg: rgba(27, 40, 56, 0.98);
+  --menu-focus-bg: rgba(88, 166, 255, 0.2);
+  --placeholder-bg: rgba(255, 255, 255, 0.08);
+  --separator-color: rgba(88, 166, 255, 0.2);
+  --card-shadow-light: rgba(0, 0, 0, 0.2);
+  --scrollbar-track-bg: rgba(13, 27, 42, 0.5);  
+  --scrollbar-thumb-bg: rgba(88, 166, 255, 0.5);  
+  --scrollbar-thumb-hover-bg: rgba(88, 166, 255, 0.7); 
+  --scrollbar-thumb-border: rgba(13, 27, 42, 0.3);
+  --gauge-track-color: rgba(255, 255, 255, 0.15);
+  --error-text-color: #F44336;
+  --card-shadow-light-hover: rgba(0, 0, 0, 0.25);
+  --separator-color-light: rgba(88, 166, 255, 0.1);
+  --warning-text-color: #FF7043;
+  --collapsible-bg: rgba(13, 27, 42, 0.7);   
+  --collapsible-text-color: #58A6FF;          
+  --collapsible-hover-bg: rgba(40, 58, 77, 0.6);
+  --pill-bg: #1A2E44;  
+  --pill-border: var(--accent-primary);
+  --card-shadow-medium: rgba(0, 0, 0, 0.22);
+  --dropdown-menu-bg: rgba(240, 246, 252, 0.98);
+  --dropdown-option-text: #0A4D68; 
+  --dropdown-focus-bg: rgba(88, 166, 255, 0.2);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #E6F7FF;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-shell { 
+    width: 100%;  
+    padding: 20px; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
+    flex-grow: 1; 
+    background: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+.page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: var(--control-bar-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.logo-placeholder {
+    width: 150px;
+    height: 70px;
+    background-color: var(--accent-primary-transparent);
+    border: 2px dashed var(--accent-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-primary);
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 8px;
+}
+
+.logo-image {
+    max-height: 100px;
+    width: auto;
+}
+
+.control-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    background-color: var(--control-bar-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    position: relative; 
+    z-index: 10;   
+    flex-shrink: 0;
+}
+
+.city-dropdown-container {
+    flex: 0 1 300px;
+    min-width: 200px;
+    position: relative;
+}
+
+.city-dropdown .Select-control {
+    background-color: var(--control-bg-transparent) !important;
+    border: 1px solid var(--accent-border-transparent) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+
+.city-dropdown .Select-value-label {
+    color: var(--text-primary) !important;
+}
+
+.city-dropdown .Select-placeholder {
+    color: var(--text-secondary) !important;
+}
+
+.city-dropdown .Select-menu-outer {
+    background-color: var(--menu-bg) !important;
+    background-color: var(--dropdown-menu-bg, var(--menu-bg)) !important;
+    border: 1px solid var(--accent-border-transparent) !important;
+    border-radius: 8px !important;
+    z-index: 1000 !important; 
+    position: absolute !important; 
+    width: 100%; 
+}
+
+.city-dropdown .Select-option {
+    color: var(--text-primary) !important;
+    color: var(--dropdown-option-text, var(--text-primary)) !important;
+    background-color: transparent !important;
+    padding: 8px 12px !important;
+}
+
+.city-dropdown .Select-option.is-focused {
+    background-color: var(--menu-focus-bg) !important;
+    background-color: var(--dropdown-focus-bg, var(--menu-focus-bg)) !important;
+}
+
+.city-dropdown .Select-arrow {
+    border-top-color: var(--text-primary) !important;
+}
+
+.current-weather-display {
+    flex: 1 1 auto; 
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 15px;
+    padding: 10px 15px;
+}
+
+.weather-icon-container {
+    flex-shrink: 0; 
+}
+
+.weather-icon {
+    width: 48px; 
+    height: 48px;
+    display: block;
+    background-color: var(--placeholder-bg); 
+    border-radius: 5px;
+}
+
+.weather-text-info-expanded { 
+    display: flex;
+    flex-direction: column; 
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: 0px; 
+}
+
+.weather-text-info-expanded > .weather-city { 
+    font-weight: bold;
+    font-size: 1.0em;
+    color: var(--accent-primary);
+    margin-bottom: 0px;
+    line-height: 1.2;
+}
+
+.weather-text-info-expanded > .weather-temp {
+    font-size: 1.8em; 
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 1px; 
+    margin-bottom: 1px; 
+    line-height: 1.1; 
+}
+
+.weather-text-info-expanded > .weather-condition {
+    font-size: 0.9em; 
+    font-style: italic;
+    min-height: 1.1em; 
+    color: var(--accent-secondary);
+    margin-top: 0px;
+    margin-bottom: 4px; 
+    line-height: 1.2; 
+}
+
+.weather-details-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px; 
+    width: 100%;
+    align-items: baseline;
+    margin-top: 0px; 
+}
+.weather-text-info-expanded .weather-details {
+    font-size: 0.8em; 
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.weather-text-info-expanded .weather-details_small {
+    font-size: 0.7em;
+    color: var(--text-secondary); 
+    line-height: 1.2;
+}
+
+.main-content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    padding: 20px 0;
+    flex-grow: 1; 
+}
+
+.widget-card { 
+    background-color: var(--card-bg); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border-radius: 18px; 
+    padding: 20px 25px; 
+    box-shadow: 0 8px 30px var(--shadow-color); 
+    border: 1px solid var(--border-color); 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 400px;
+    position: relative; 
+    z-index: 1; 
+    overflow: hidden; 
+}
+
+.widget-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--accent-primary);
+    font-size: 1.25em; 
+    font-weight: 600; 
+    text-align: center;
+    flex-shrink: 0; 
+    position: relative; 
+    z-index: 2; 
+}
+
+.flex-graph-container {
+    flex-grow: 1;  
+    min-height: 0; 
+    width: 100%;   
+    position: relative; 
+}
+
+.flex-graph-container > .js-plotly-plot,
+.flex-graph-container > .plotly > .main-svg {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+#section-2-edu-info .edu-info-content {
+    max-height: 350px; 
+    overflow-y: auto;  
+    padding-right: 5px; 
+    flex-grow: 1; 
+}
+
+.aqi-definition-markdown {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: var(--text-primary); 
+}
+
+.aqi-definition-markdown p { margin-bottom: 0.5em; } 
+
+.edu-info-separator { 
+    border: none; 
+    border-top: 1px solid var(--separator-color); 
+    margin: 15px 0; 
+}
+
+.aqi-scale-title { 
+    font-size: 1.1em; 
+    color: var(--accent-primary); 
+    margin-bottom: 10px; 
+    text-align: center; 
+}
+
+.aqi-scale-container { display: flex; flex-direction: column; gap: 10px; } 
+
+.aqi-category-card {
+    padding: 10px 15px;
+    border-left-width: 5px; 
+    border-left-style: solid;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px var(--card-shadow-light); 
+}
+
+.aqi-category-level { font-weight: bold; font-size: 1.05em; display: block; margin-bottom: 3px; } 
+
+.aqi-category-range { 
+    font-size: 0.85em; 
+    color: var(--text-secondary); 
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+.aqi-category-implications { 
+    font-size: 0.85em; 
+    line-height: 1.4; 
+    color: var(--text-primary); 
+}
+
+#section-2-edu-info .edu-info-content::-webkit-scrollbar { 
+    width: 8px; 
+}
+#section-2-edu-info .edu-info-content::-webkit-scrollbar-track { 
+    background: var(--scrollbar-track-bg); 
+    border-radius: 4px; 
+}
+#section-2-edu-info .edu-info-content::-webkit-scrollbar-thumb { 
+    background-color: var(--scrollbar-thumb-bg); 
+    border-radius: 4px; 
+    border: 1px solid var(--scrollbar-thumb-border); 
+}
+#section-2-edu-info .edu-info-content::-webkit-scrollbar-thumb:hover { 
+    background-color: var(--scrollbar-thumb-hover-bg); 
+}
+
+#section-2-edu-info .edu-info-content,
+.pollutant-risks-widget-content,
+.forecast-widget-content {
+    flex-grow: 1;     
+    overflow-y: auto; 
+    min-height: 0;    
+}
+
+@media (max-width: 1200px) { 
+    .main-content-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .control-bar { flex-direction: column; align-items: stretch; }
+    .city-dropdown-container { flex-basis: auto; margin-bottom: 15px; }
+    .current-weather-display { justify-content: center; }
+    .weather-text-info-expanded { align-items: center; }
+    .main-content-grid { grid-template-columns: 1fr; }
+}
+
+#current-aqi-details-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    height: 100%; 
+    padding: 5px 10px; 
+    box-sizing: border-box;
+}
+
+.aqi-gauge-wrapper { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 10px; 
+    width: 100%;
+}
+
+.aqi-city-name-highlight {
+    font-size: 1.7em; 
+    font-weight: 600;
+    color: var(--accent-primary); 
+    margin: 0 0 5px 0; 
+    text-align: center;
+}
+
+.aqi-gauge-svg-container { 
+    width: 280px;  
+    height: 170px; 
+    margin-bottom: 10px; 
+    position: relative; 
+}
+
+.aqi-svg-gauge { 
+    width: 100%;
+    height: 100%;
+    display: block; 
+}
+
+.aqi-svg-gauge path {
+    fill: none; 
+    stroke-linecap: round; 
+    transition: stroke 0.3s ease-in-out; 
+}
+
+.aqi-gauge-track {
+    stroke: var(--gauge-track-color); 
+}
+
+.aqi-gauge-value {
+}
+
+.aqi-svg-gauge .aqi-gauge-value-text {
+    font-size: 4.5em; 
+    font-weight: 700; 
+    fill: var(--text-primary);    
+    text-anchor: middle; 
+    dominant-baseline: central; 
+}
+
+.aqi-svg-gauge .aqi-gauge-level-text {
+    font-size: 1.3em; 
+    font-weight: 500;
+    fill: var(--text-secondary);    
+    text-anchor: middle;
+    dominant-baseline: central; 
+}
+
+.aqi-obs-time-gauge { 
+    font-size: 0.95em; 
+    color: var(--text-secondary);
+    margin-top: 5px; 
+    text-align: center;
+}
+
+.current-aqi-error-container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.aqi-error-message { 
+    color: var(--error-text-color); 
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.aqi-error-detail { 
+    color: var(--error-text-color);
+    font-size: 0.9em;
+}
+
+.forecast-widget-content {
+    padding-top: 10px; 
+    width: 100%;
+    max-height: 320px;                      
+    overflow-y: auto;  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.forecast-day-card {
+    box-shadow: 0 2px 5px var(--card-shadow-light);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.forecast-day-card:hover {
+    box-shadow: 0 4px 8px var(--card-shadow-light-hover); 
+}
+
+.forecast-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px; 
+}
+
+.forecast-date {
+    font-size: 1em; 
+    font-weight: 600;
+    color: var(--text-primary); 
+}
+
+.forecast-aqi-level {
+    font-size: 0.9em; 
+    font-weight: 500; 
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.forecast-aqi-level > span[style*="fontWeight: bold"] { 
+    margin-right: 3px;
+}
+
+.forecast-implications {
+    font-size: 0.85em;
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin: 5px 0 0 0; 
+    padding-left: 2px;
+}
+
+.forecast-error-message { 
+    color: var(--error-text-color);
+    font-size: 0.9em;
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.forecast-widget-content::-webkit-scrollbar {
+    width: 8px;
+}
+.forecast-widget-content::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-bg); 
+    border-radius: 4px;
+}
+
+.forecast-widget-content::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-bg); 
+    border-radius: 4px;
+    border: 1px solid var(--scrollbar-thumb-border); 
+}
+
+.forecast-widget-content::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-bg);
+}
+
+.pollutant-risks-widget-content {
+    padding: 15px;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+}
+
+.pollutant-risk-title {
+    font-size: 1.1em;
+    color: var(--accent-primary); 
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--separator-color);
+    padding-bottom: 5px;
+}
+
+.pollutant-risk-list {
+    list-style-type: none; 
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.pollutant-risk-item {
+    padding: 8px 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+    border-bottom: 1px dashed var(--separator-color-light); 
+}
+.pollutant-risk-item:last-child {
+    border-bottom: none;
+}
+.pollutant-risk-item strong { 
+    color: var(--warning-text-color) !important; 
+    margin-right: 5px;
+}
+.pollutant-risk-item-none {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+
+.pollutant-details-collapsible {
+    margin-top: 15px;
+    border: 1px solid var(--separator-color-light); 
+    border-radius: 6px;
+    background-color: var(--collapsible-bg); 
+}
+.raw-pollutants-summary {
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--collapsible-text-color); 
+    cursor: pointer;
+    border-radius: 6px; 
+    outline: none; 
+    display: block;
+    transition: background-color 0.2s ease;
+}
+.pollutant-details-collapsible[open] .raw-pollutants-summary {
+     border-bottom: 1px solid var(--separator-color-light);
+     border-bottom-left-radius: 0;
+     border-bottom-right-radius: 0;
+}
+.raw-pollutants-summary:hover {
+    background-color: var(--collapsible-hover-bg); 
+}
+
+
+.raw-pollutants-pills-container { 
+    padding: 15px;
+    display: flex;         
+    flex-wrap: wrap;       
+    gap: 8px 10px;          
+    align-items: center;  
+}
+
+.pollutant-pill {
+    display: inline-flex; 
+    align-items: baseline; 
+    padding: 5px 10px;
+    border-radius: 12px; 
+    background-color: var(--pill-bg); 
+    border: 1px solid var(--pill-border);   
+    font-size: 0.85em; 
+    box-shadow: 0 1px 2px var(--card-shadow-light);
+    white-space: nowrap;
+}
+
+.pollutant-pill-name {
+    font-weight: 600;
+    color: var(--accent-primary);     
+    margin-right: 4px;  
+}
+
+.pollutant-pill-value {
+    color: var(--text-primary);     
+    font-weight: 500;
+}
+
+.pollutant-risk-error { 
+    color: var(--error-text-color);
+    font-size: 0.9em;
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.predicted-risks-widget-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0;
+    padding-top: 10px;
+}
+
+.predicted-risk-day-card {
+    box-shadow: 0 2px 4px var(--card-shadow-medium);
+    transition: transform 0.2s ease-in-out;
+}
+.predicted-risk-day-card:hover {
+    transform: translateY(-2px);
+}
+
+.predicted-risk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.predicted-risk-date {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--text-primary); 
+}
+
+.predicted-risk-aqi-level {
+    font-size: 0.95em;
+    font-weight: 500;
+    padding: 3px 7px;
+    border-radius: 4px;
+}
+
+.predicted-risk-implications {
+    font-size: 0.85em;
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.predicted-risk-error {
+    color: var(--error-text-color);
+    font-size: 0.9em;
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+}
+
+@media (max-width: 1200px) { 
+    .main-content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .control-bar { flex-direction: column; align-items: stretch; }
+    .city-dropdown-container { flex-basis: auto; margin-bottom: 15px; }
+    .current-weather-display { justify-content: center; }
+    .weather-text-info-expanded { align-items: center; }
+    .main-content-grid { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+#section-6-weekly-risks .predicted-risks-widget-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0;
+    padding-top: 10px;
+    gap: 12px; 
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    background-color: var(--control-bg-transparent);
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-border-transparent);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 1001; 
+}
+
+.theme-toggle:hover {
+    background-color: var(--collapsible-hover-bg);
+    transform: scale(1.1);
+}
+
+.dark-theme .city-dropdown .Select-menu-outer {
+    background-color: rgba(27, 40, 56, 0.98) !important;  
+    border: 1px solid rgba(88, 166, 255, 0.4) !important; 
+}
+.dark-theme .city-dropdown .Select-option {
+    color: #F0F6FC !important; 
+}
+.dark-theme .city-dropdown .Select-option.is-focused {
+    background-color: rgba(88, 166, 255, 0.2) !important; 
+}
+
+.dark-theme .city-dropdown .Select-value-label {
+    color: #F0F6FC !important; 
+}
+
+.dark-theme .aqi-category-card {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+.dark-theme .aqi-category-level {
+    color: var(--text-primary) !important;
+}
+.dark-theme .aqi-category-range,
+.dark-theme .aqi-category-implications {
+    color: var(--text-secondary) !important;
+}
+
+.dark-theme .pollutant-risk-item {
+    color: var(--text-secondary) !important;
+}
+.dark-theme .pollutant-risk-item strong {
+    color: var(--warning-text-color) !important;
+}
+
+.page-footer {
+    text-align: center;
+    padding: 20px; 
+    margin-top: auto; 
+    background-color: var(--control-bar-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85em;
+    color: var(--text-primary);
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0; 
+}
+
+.content-above-footer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    min-height: 0; 
+}
